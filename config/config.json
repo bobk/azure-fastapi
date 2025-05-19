@@ -1,0 +1,14 @@
+{
+    "calls": {
+        "vm_list": {
+            "os_command": [ "az.cmd", "vm", "list", "-d", "--subscription", "{subscription_id}", "-g", "{resourcegroup_name}" ],
+            "os_jqfilter": ".[] | {name, hardwareProfile, powerState}",
+            "api_endpoint": {
+                "method": "GET",
+                "url" : "https://management.azure.com/subscriptions/{subscription_id}/resourceGroups/{resourcegroup_name}/providers/Microsoft.Compute/virtualMachines?api-version=2024-07-01"
+            },
+            "api_jqfilter": ".[] | {name, hardwareProfile, powerState}"
+        }
+
+    }
+}
